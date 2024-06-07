@@ -8,7 +8,7 @@ exports.on_backend_call = function(ctx) {
       body_json: todos.map(todo => {
         return {
           ...todo,
-          env: '${environment.ENV}'
+          env: '${environment.ENV}' 
         };
       })
     }
