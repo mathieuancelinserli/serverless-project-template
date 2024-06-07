@@ -37,6 +37,15 @@
           "plugin": "cp:otoroshi.next.plugins.OverrideHost",
           "enabled": true,
           "config": {}
+        },
+        {
+          "plugin": "cp:cloud-apim.plugins.JsModulePlugin",
+          "enabled": true,
+          "include": [],
+          "exclude": [],
+          "config": {
+            "module": "/modules/jsonplaceholder.js"
+          }
         }
       ]
     },
