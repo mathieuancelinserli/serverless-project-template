@@ -6,10 +6,53 @@
     "description": "# cloud-apim serverless project template"
   },
   "tags": [],
-  "paths": {},
+  "paths": {
+    "/todos": {
+      "get": {
+        "summary": "",
+        "deprecated": false,
+        "description": "",
+        "operationId": "readAllTasks",
+        "tags": [],
+        "responses": {},
+        "x-cloud-apim-plugins": {
+          "$ref": "#/components/x-cloud-apim-plugins/defaultPlugins"
+        },
+        "x-cloud-apim-backend": {
+          "$ref": "#/components/x-cloud-apim-backends/defaultBackend"
+        }
+      }
+    }
+  },
   "components": {
     "schemas": {},
-    "x-cloud-apim-plugins": {},
-    "x-cloud-apim-backends": {}
+    "x-cloud-apim-plugins": {
+      "defaultPlugins": [
+        {
+          "plugin": "cp:otoroshi.next.plugins.ApikeyCalls",
+          "enabled": true,
+          "config": {}
+        },
+        {
+          "plugin": "cp:otoroshi.next.plugins.OverrideHost",
+          "enabled": true,
+          "config": {}
+        }
+      ]
+    },
+    "x-cloud-apim-backends": {
+      "defaultBackend": {
+        "root": "/",
+        "rewrite": false,
+        "targets": [
+          {
+            "hostname": "jsonplaceholder.typicode.com",
+            "port": 443,
+            "tls": true
+          }
+        ]
+      }
+    },
+    "x-cloud-apim-frontends": {}
   }
 }
