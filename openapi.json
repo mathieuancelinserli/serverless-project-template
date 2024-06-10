@@ -29,22 +29,26 @@
     "x-cloud-apim-plugins": {
       "defaultPlugins": [
         {
-          "plugin": "cp:otoroshi.next.plugins.ApikeyCalls",
-          "enabled": true,
-          "config": {}
-        },
-        {
           "plugin": "cp:otoroshi.next.plugins.OverrideHost",
           "enabled": true,
           "config": {}
         },
         {
-          "plugin": "cp:cloud-apim.plugins.JsModulePlugin",
+          "plugin": "cp:otoroshi.next.plugins.OtoroshiInfos",
           "enabled": true,
           "include": [],
           "exclude": [],
           "config": {
-            "module": "/modules/jsonplaceholder.js"
+            "version": "Latest",
+            "ttl": 30,
+            "header_name": "Cloud-APIM-Caller",
+            "add_fields": null,
+            "algo": {
+              "type": "HSAlgoSettings",
+              "size": 512,
+              "secret": "secret",
+              "base64": false
+            }
           }
         }
       ]
@@ -55,7 +59,7 @@
         "rewrite": false,
         "targets": [
           {
-            "hostname": "jsonplaceholder.typicode.com",
+            "hostname": "mirror.otoroshi.io",
             "port": 443,
             "tls": true
           }
