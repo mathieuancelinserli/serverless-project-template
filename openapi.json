@@ -22,6 +22,22 @@
           "$ref": "#/components/x-cloud-apim-backends/defaultBackend"
         }
       }
+    },
+    "/hello": {
+      "get": {
+        "summary": "",
+        "deprecated": false,
+        "description": "",
+        "operationId": "hello",
+        "tags": [],
+        "responses": {},
+        "x-cloud-apim-plugins": {
+          "$ref": "#/components/x-cloud-apim-plugins/js"
+        },
+        "x-cloud-apim-backend": {
+          "$ref": "#/components/x-cloud-apim-backends/defaultBackend"
+        }
+      }
     }
   },
   "components": {
@@ -92,6 +108,24 @@
             "pass_with_user": false,
             "wipe_backend_request": true,
             "update_quotas": true
+          }
+        }
+      ],
+      "js": [
+        {
+          "plugin": "cp:otoroshi.next.plugins.OverrideHost",
+          "enabled": true,
+          "include": [],
+          "exclude": [],
+          "config": {}
+        },
+        {
+          "plugin": "cp:cloud-apim.plugins.JsModulePlugin",
+          "enabled": true,
+          "include": [],
+          "exclude": [],
+          "config": {
+            "module": "/modules/jsonplaceholder.js"
           }
         }
       ]
