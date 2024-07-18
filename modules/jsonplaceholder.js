@@ -1,5 +1,6 @@
 exports.on_backend_call = function(ctx) {
-  console.log('calling jsonplaceholder', Date.now(), global.process);
+  const res = host_api.storage.getItem('foo:bar');
+  console.log('calling jsonplaceholder', Date.now(), res);
   return fetch('https://jsonplaceholder.typicode.com/todos').then(r => r.json()).then(todos => {
     return {
       status: 200,
