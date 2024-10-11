@@ -3,7 +3,7 @@
   "enabled": true,
   "auth": true,
   "examples": true,
-  "lua_doc": true,
+  "lua_doc": false,
   "icon": "https://www.cloud-apim.com/assets/logo/made-with-cloud-apim-inverted.png",
   "path": "/docs",
   "max_user_created_apikeys": 1,
