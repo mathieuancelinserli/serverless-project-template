@@ -1,11 +1,16 @@
 {
+  "title": "template portal",
   "enabled": true,
   "auth": true,
-  "title": "template portal",
   "examples": true,
-  "path": "/docs",
+  "lua_doc": true,
   "icon": "https://www.cloud-apim.com/assets/logo/made-with-cloud-apim-inverted.png",
+  "path": "/docs",
   "max_user_created_apikeys": 1,
+  "monetisation": {
+    "enabled": false,
+    "provider": "stripe"
+  },
   "plans": [
     {
       "id": "default",
