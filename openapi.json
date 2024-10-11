@@ -3,7 +3,7 @@
   "info": {
     "title": "cloud-apim serverless project template",
     "version": "1.0.0",
-    "description": "# cloud-apim serverless project template"
+    "description": "# cloud-apim serverless project template\n\ncoucou !"
   },
   "tags": [],
   "paths": {
