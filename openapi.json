@@ -38,6 +38,22 @@
           "$ref": "#/components/x-cloud-apim-backends/defaultBackend"
         }
       }
+    },
+    "/pif": {
+      "get": {
+        "summary": "Returns an object containing personal informations",
+        "deprecated": false,
+        "description": "Returns an object containing personal informations",
+        "operationId": "getPif",
+        "tags": [],
+        "responses": {},
+        "x-cloud-apim-plugins": {
+          "$ref": "#/components/x-cloud-apim-plugins/defaultPlugins"
+        },
+        "x-cloud-apim-backend": {
+          "$ref": "#/components/x-cloud-apim-backends/defaultBackend"
+        }
+      }
     }
   },
   "components": {
@@ -48,67 +64,6 @@
           "plugin": "cp:otoroshi.next.plugins.OverrideHost",
           "enabled": true,
           "config": {}
-        },
-        {
-          "plugin": "cp:otoroshi.next.plugins.OtoroshiInfos",
-          "enabled": true,
-          "include": [],
-          "exclude": [],
-          "config": {
-            "version": "Latest",
-            "ttl": 30,
-            "header_name": "Cloud-APIM-Caller",
-            "add_fields": null,
-            "algo": {
-              "type": "HSAlgoSettings",
-              "size": 512,
-              "secret": "secret",
-              "base64": false
-            }
-          }
-        },
-        {
-          "plugin": "cp:otoroshi.next.plugins.ApikeyCalls",
-          "enabled": true,
-          "include": [],
-          "exclude": [],
-          "config": {
-            "extractors": {
-              "basic": {
-                "enabled": true,
-                "header_name": null,
-                "query_name": null
-              },
-              "custom_headers": {
-                "enabled": true,
-                "client_id_header_name": null,
-                "client_secret_header_name": null
-              },
-              "client_id": {
-                "enabled": true,
-                "header_name": null,
-                "query_name": null
-              },
-              "jwt": {
-                "enabled": true,
-                "secret_signed": true,
-                "keypair_signed": true,
-                "include_request_attrs": false,
-                "max_jwt_lifespan_sec": null,
-                "header_name": null,
-                "query_name": null,
-                "cookie_name": null
-              }
-            },
-            "routing": {
-              "enabled": false
-            },
-            "validate": true,
-            "mandatory": true,
-            "pass_with_user": false,
-            "wipe_backend_request": true,
-            "update_quotas": true
-          }
         }
       ],
       "js": [
