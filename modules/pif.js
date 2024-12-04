@@ -5,7 +5,7 @@ exports.on_backend_call = function(ctx) {
     headers: {
       'Content-Type': 'application/json'
     },
-    body_json: {
+    body_json: { 
       "name": "Mathieu ANCELIN",
       "age": 38,
       "role": "speaker",
