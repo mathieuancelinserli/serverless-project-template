@@ -72,6 +72,24 @@
           "$ref": "#/components/x-cloud-apim-backends/defaultBackend"
         }
       }
+    },
+    "/address": {
+      "get": {
+        "summary": "getAddress",
+        "deprecated": false,
+        "description": "getAddress",
+        "operationId": "getAddress",
+        "tags": [],
+        "responses": {},
+        "parameters": [],
+        "requestBody": null,
+        "x-cloud-apim-plugins": {
+          "$ref": "#/components/x-cloud-apim-plugins/address"
+        },
+        "x-cloud-apim-backend": {
+          "$ref": "#/components/x-cloud-apim-backends/defaultBackend"
+        }
+      }
     }
   },
   "components": {
@@ -106,6 +124,22 @@
           "exclude": [],
           "config": {
             "module": "/modules/bank.js"
+          }
+        }
+      ],
+      "bank": [
+        {
+          "plugin": "cp:otoroshi.next.plugins.OverrideHost",
+          "enabled": true,
+          "config": {}
+        },
+        {
+          "plugin": "cp:cloud-apim.plugins.JsModulePlugin",
+          "enabled": true,
+          "include": [],
+          "exclude": [],
+          "config": {
+            "module": "/modules/enrich.js"
           }
         }
       ],
