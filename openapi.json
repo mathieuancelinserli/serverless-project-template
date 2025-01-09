@@ -54,6 +54,24 @@
           "$ref": "#/components/x-cloud-apim-backends/defaultBackend"
         }
       }
+    },
+    "/bank": {
+      "get": {
+        "summary": "getAccountInfo",
+        "deprecated": false,
+        "description": "getAccountInfo",
+        "operationId": "getAccountInfo",
+        "tags": [],
+        "responses": {},
+        "parameters": [],
+        "requestBody": null,
+        "x-cloud-apim-plugins": {
+          "$ref": "#/components/x-cloud-apim-plugins/defaultPlugins"
+        },
+        "x-cloud-apim-backend": {
+          "$ref": "#/components/x-cloud-apim-backends/defaultBackend"
+        }
+      }
     }
   },
   "components": {
@@ -71,7 +89,7 @@
           "include": [],
           "exclude": [],
           "config": {
-            "module": "/modules/pif.js"
+            "module": "/modules/bank.js"
           }
         }
       ],
