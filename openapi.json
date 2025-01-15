@@ -90,6 +90,24 @@
           "$ref": "#/components/x-cloud-apim-backends/defaultBackend"
         }
       }
+    },
+    "/flight": {
+      "get": {
+        "summary": "flight",
+        "deprecated": false,
+        "description": "flight",
+        "operationId": "flight",
+        "tags": [],
+        "responses": {},
+        "parameters": [],
+        "requestBody": null,
+        "x-cloud-apim-plugins": {
+          "$ref": "#/components/x-cloud-apim-plugins/flight"
+        },
+        "x-cloud-apim-backend": {
+          "$ref": "#/components/x-cloud-apim-backends/defaultBackend"
+        }
+      }
     }
   },
   "components": {
@@ -140,6 +158,22 @@
           "exclude": [],
           "config": {
             "module": "/modules/enrich.js"
+          }
+        }
+      ],
+      "flight": [
+        {
+          "plugin": "cp:otoroshi.next.plugins.OverrideHost",
+          "enabled": true,
+          "config": {}
+        },
+        {
+          "plugin": "cp:cloud-apim.plugins.JsModulePlugin",
+          "enabled": true,
+          "include": [],
+          "exclude": [],
+          "config": {
+            "module": "/modules/flights.js"
           }
         }
       ],
