@@ -6,6 +6,6 @@
       headers: {
         'Content-Type': 'application/json'
       },
-      body_json: { departure: "08:00 AM", arrival: "11:30 AM", duration: "5h 30m" }
+      body_json: { departure: "08:00 AM", arrival: "11:30 AM", duration: "13h" }
     }
   };
