@@ -184,7 +184,7 @@
           "config": {}
         },
         {
-          "plugin": "cp:cloud-apim.plugins.JsModulePlugin",
+          "plugin": "cp:cloud-apim.plugins.JsModulePlugin", 
           "enabled": true,
           "include": [],
           "exclude": [],
