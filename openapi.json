@@ -213,12 +213,12 @@
       ],
       "workflow": [
         {
-          "plugin": "cp:cloud-apim.plugins.JsModulePlugin",
+          "plugin": "cp:otoroshi.next.workflow.WorkflowBackend",
           "enabled": true,
           "include": [],
           "exclude": [],
           "config": {
-            "module": "/modules/jsonplaceholder.js"
+            "ref": ""
           }
         }
       ],
