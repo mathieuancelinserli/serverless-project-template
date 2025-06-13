@@ -5,6 +5,7 @@
             "default"
         ]
     },
+    "id":"pokemons",
     "name": "New Workflow",
     "description": "New Workflow",
     "tags": [],
