@@ -118,7 +118,7 @@
         "tags": [],
         "responses": {},
         "x-cloud-apim-plugins": {
-          "$ref": "workflow"
+          "$ref": "#/components/x-cloud-apim-plugins/workflow"
         },
         "x-cloud-apim-backend": {
           "$ref": "#/components/x-cloud-apim-backends/defaultBackend"
