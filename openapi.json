@@ -218,7 +218,7 @@
           "include": [],
           "exclude": [],
           "config": {
-            "ref": "pokemons"
+            "ref": "pokemons" 
           }
         }
       ],
