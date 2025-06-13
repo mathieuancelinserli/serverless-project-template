@@ -1,0 +1,65 @@
+{
+    "_loc": {
+        "tenant": "default",
+        "teams": [
+            "default"
+        ]
+    },
+    "name": "New Workflow",
+    "description": "New Workflow",
+    "tags": [],
+    "config": {
+        "kind": "workflow",
+        "steps": [
+            {
+            "kind": "call",
+            "description": "get all pokemons from the pokeapi",
+            "function": "core.http_client",
+            "args": {
+                "method": "GET",
+                "url": "https://pokeapi.co/api/v2/pokemon"
+            },
+            "result": "pokemons"
+            },
+            {
+            "kind": "assign",
+            "description": "extract results from the response, and only keep the 5 first pokemons",
+            "values": [
+                {
+                "name": "pokemons",
+                "value": {
+                    "$array_page": {
+                    "array": "${pokemons.body_json.results}",
+                    "page": 1,
+                    "page_size": 5
+                    }
+                }
+                },
+                {
+                "name": "pokemon_names",
+                "value": []
+                }
+            ]
+            },
+            {
+            "kind": "map",
+            "description": "for each pokemon, just extract its name",
+            "values": "${pokemons}",
+            "node": {
+                "kind": "value",
+                "value": "${foreach_value.name}"
+            },
+            "result": "pokemon_names"
+            }
+        ],
+        "returned": {
+            "$mem_ref": {
+            "name": "pokemon_names"
+            }
+        }
+    },
+    "test_payload": {
+        "name": "foo"
+    },
+    "kind": "Workflow"
+}
